@@ -16,4 +16,4 @@ const rootSlice = createSlice({
 
 export const reducer = rootSlice.reducer;
 // export action creators
-export const { inputName, inputEmail, inputPassword } = rootSlice.actions;
+export const { inputNickname, inputEmail, inputPassword } = rootSlice.actions;
