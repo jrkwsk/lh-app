@@ -9,15 +9,18 @@ export const LoginForm = () => {
     const password = useSelector(state => state.password)
     const email = useSelector(state => state.email)
 
-    const { register, handleSubmit } = useForm({ defaultValues: { nickname: nickname } })
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors }
+    } = useForm({ defaultValues: { nickname: nickname, email: email, password: password } })
 
     const handleOnsubmit = (data) => {
         dispatch(inputNickname(data.nickname))
         dispatch(inputEmail(data.email))
         dispatch(inputPassword(data.password))
     }
-
-
 
     return (
         <div className="container">
@@ -30,21 +33,41 @@ export const LoginForm = () => {
                         <div className="form-group row">
                             <label htmlFor="nickname" className="col-2 col-form-label">Nickname</label>
                             <div className="col-8">
-                                <input type="text" className="form-control" id="" placeholder="Nickname"
+                                <input
+                                    type="text" className="form-control" id="" placeholder="Nickname"
+                                    {...register("nickname", {
+                                        minLength: 7
+                                    })}
                                 ></input>
+
+                                {errors.nickname && <p>Your nickname is less than 7 characters</p>}
+
                             </div>
                         </div>
                         <div className="form-group row">
                             <label htmlFor="" className="col-2 col-form-label">Email</label>
                             <div className="col-8">
-                                <input type="text" className="form-control" id="" placeholder="Email"></input>
+                                <input
+                                    type="text" className="form-control" id="" placeholder="Email"
+                                    {...register("email", {
+                                        pattern: /\b[a-z0-9-_.]+@[a-z0-9-_.]+(\.[a-z0-9]+)+/i
+                                    })}
+                                ></input>
+                                {errors.email && <p>This is not a valid email format</p>}
+
                             </div>
                         </div>
                         <div className="form-group row">
 
                             <label htmlFor="" className="col-2 col-form-label">Password</label>
                             <div className="col-8">
-                                <input type="password" className="form-control" id="" placeholder="Password"></input>
+                                <input type="password" className="form-control" id="" placeholder="Password"
+                                    {...register("password", {
+                                        pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/i
+                                    })}
+                                ></input>
+                                {errors.password && <p>Must contain minimum 7 characters, at least one letter and one number</p>}
+
                             </div>
                         </div>
 
@@ -57,7 +80,7 @@ export const LoginForm = () => {
 
                     </form>
                 </div></div>
-        </div>
+        </div >
     )
 
 }
