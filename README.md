@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+Jako gość mogę założyć profil użytkownika (User) używając imienia, email i hasła
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+System weryfikuje poprawność email i hasło (7 znaków min, litery i cyfry) i wyświetla komunikat
 
-## Available Scripts
+Jako gość mogę się zalogować (email i hasło) i przejść do ekranu głownego
 
-In the project directory, you can run:
+System weryfikuje uzytkownik z email i hasło istnieje lub komunikat
 
-### `npm start`
+Jako zalogowany na ekranie głownym mogę przeglądać moje zadania (wg userId) i najnowsze zadania (wg createdAt ) i najnowsze komentarze (createdAt)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Jako zalogowany na ekranie użytkowników mogę przeglądać użytkowników
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Jako zalogowany na ekranie wszystkich zadań mogę filtrować zadania wg. title, status(new,inprogress,review,done), userId i sortować wg. userId lub createdAt
 
-### `npm test`
+Jako zalogowany na ekranie wszystkich zadań pole wyszukiwania jest focused
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Jako zalogowany wybierając zadanie z (dowolnej) listy przechodzę na ekran szczegółów
 
-### `npm run build`
+Jako zalogowany na ekranie szczegółów zadania widzę komentarze (Comment - id, userId, content, createdAt) do zadania
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Jako zalogowany na ekranie szczegółów zadania mogę dodawać komentarze(Comment) do zadania
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Jako zalogowany na ekranie szczegółów zadania widzę historię zmian w zadaniu (zmiana danych, uzytkownika, dodano komentarz)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Jako zalogowany korzystając z menu rozwijanego mogę przekazać wybrane zadanie innemu użytkownikowi (zmiana historii!)
 
-### `npm run eject`
+Jako zalogowany na widoku kanban widze zadania w kolumnach wg. statusu (przeciąganie zadań niewymagane)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Jako zalogowany na widoku sprints moge dodać sprint
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Jako zalogowany na widoku sprints moge wyswietlic sprint i liste zadan
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Jako zalogowany na widoku sprints moge dodać zadanie do sprintu, lub je usunac do backloga
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Do 6.6 MVP.
