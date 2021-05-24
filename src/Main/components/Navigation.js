@@ -15,44 +15,42 @@ export const Navigation = () => {
 return (
   <Router>
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <a className="navbar-brand">LH-app</a>
+  <ul>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
   <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-    
-
       {mockmode === 'guest-view' && <div className="guest-view">
       <div className="navbar-nav">
-      <a className="nav-item nav-link active">
+      <li className="nav-item nav-link active">
       <NavLink className="nav-link" to="/" activeClassName="nav-item-active">Home</NavLink>
-      </a>
-      <a className="nav-item nav-link">
+      </li>
+      <li className="nav-item nav-link">
       <NavLink className="nav-link" to="/login">Login</NavLink>
-      </a>
+      </li>
       </div>
       </div>}
 
       {mockmode === 'user-view' && <div className="user-view">
 
       <div className="navbar-nav">
-      <a className="nav-item nav-link">
+      <li className="nav-item nav-link">
       <NavLink className="nav-link" to="/users">Users</NavLink>
-      </a>  
+      </li>  
       
-      <a className="nav-item nav-link">
+      <li className="nav-item nav-link">
       <NavLink className="nav-link" to="/tasks">Tasks</NavLink>
-      </a>
+      </li>
       
-      <a className="nav-item nav-link">
+      <li className="nav-item nav-link">
       <NavLink className="nav-link" to="/kanban">Kanban</NavLink>
-      </a>
-      <a className="nav-item nav-link">
-      <NavLink className="nav-link" to="/sprints">Sprints</NavLink></a>  
-
+      </li>
+      <li className="nav-item nav-link">
+      <NavLink className="nav-link" to="/sprints">Sprints</NavLink></li>  
       </div>    
     </div>}
   </div>
+  </ul>
 </nav>
 </Router>
 )
