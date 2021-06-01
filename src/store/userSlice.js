@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const rootSlice = createSlice({
-    name: "root",
+const userSlice = createSlice({
+    name: "user-data",
     initialState: {
         nickname: "",
         email: "",
@@ -16,6 +16,6 @@ const rootSlice = createSlice({
     }
 })
 
-export const reducer = rootSlice.reducer;
+export const userReducer = userSlice.reducer;
 // export action creators
-export const { inputNickname, inputEmail, inputPassword, inputError } = rootSlice.actions;
+export const { inputNickname, inputEmail, inputPassword, inputError } = userSlice.actions;

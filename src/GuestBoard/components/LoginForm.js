@@ -1,23 +1,21 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { inputNickname, inputEmail, inputPassword } from '../../store/rootSlice'
+import { inputEmail, inputPassword } from '../../store/userSlice'
 
 export const LoginForm = () => {
     const dispatch = useDispatch()
-    const nickname = useSelector(state => state.nickname)
-    const password = useSelector(state => state.password)
-    const email = useSelector(state => state.email)
+    const password = useSelector(state => state.user.password)
+    const email = useSelector(state => state.user.email)
 
 
     const {
         register,
         handleSubmit,
         formState: { errors }
-    } = useForm({ defaultValues: { nickname: nickname, email: email, password: password } })
+    } = useForm({ defaultValues: { email: email, password: password } })
 
     const handleOnsubmit = (data) => {
-        dispatch(inputNickname(data.nickname))
         dispatch(inputEmail(data.email))
         dispatch(inputPassword(data.password))
     }
@@ -30,20 +28,6 @@ export const LoginForm = () => {
 
                     <form onSubmit={handleSubmit(handleOnsubmit)}>
 
-                        <div className="form-group row">
-                            <label htmlFor="nickname" className="col-2 col-form-label">Nickname</label>
-                            <div className="col-8">
-                                <input
-                                    type="text" className="form-control" id="" placeholder="Nickname"
-                                    {...register("nickname", {
-                                        minLength: 7
-                                    })}
-                                ></input>
-
-                                {errors.nickname && <p>Your nickname is less than 7 characters</p>}
-
-                            </div>
-                        </div>
                         <div className="form-group row">
                             <label htmlFor="" className="col-2 col-form-label">Email</label>
                             <div className="col-8">
@@ -73,7 +57,7 @@ export const LoginForm = () => {
 
                         <div className="form-group row">
                             <div className="col-8">
-                                <button type="submit" className="btn btn-primary">Sign in</button>
+                                <button type="submit" className="btn btn-primary">Log in</button>
                             </div>
                         </div>
 
