@@ -1,10 +1,18 @@
 {
   "users": [
     {
-      "id": "123",
-      "email": "temai@dwad.dwa",
-      "password": "pa55word",
-      "createdAt": 20210531
+      "nickname": "zzzfsdfsdssgadsf",
+      "email": "uldsfjur@wp.pl",
+      "password": "asdfdfdfzzzzzzzzzz7",
+      "createdAt": 1622641003601,
+      "id": 1622641003601
+    },
+    {
+      "nickname": "aaaaaaaaaadsf",
+      "email": "uldsfjur@wp.pl",
+      "password": "asdfdfdfzzaaaaa33",
+      "createdAt": 1622641025483,
+      "id": 1622641025483
     }
   ],
   "tasks": [

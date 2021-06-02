@@ -1,32 +1,29 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
-import { inputNickname, inputEmail, inputPassword } from '../../store/userSlice'
+import { useDispatch } from "react-redux";
+import { registerUser } from '../../store/userSlice'
 
 export const RegisterForm = () => {
     const dispatch = useDispatch()
-    const nickname = useSelector(state => state.nickname)
-    const password = useSelector(state => state.password)
-    const email = useSelector(state => state.email)
+    // const user = useSelector(state => state.user)
 
 
     const {
         register,
         handleSubmit,
         formState: { errors }
-    } = useForm({ defaultValues: { nickname: nickname, email: email, password: password } })
+    } = useForm()
 
     const handleOnsubmit = (data) => {
-        dispatch(inputNickname(data.nickname))
-        dispatch(inputEmail(data.email))
-        dispatch(inputPassword(data.password))
+        dispatch(registerUser(data))
+        console.log(data)
     }
 
     return (
         <div className="container">
             <div className="row">
                 <div className="col-8">
-                    <h1 className="display-3 m-5">Hello, login here!</h1>
+                    <h1 className="display-3 m-5">Hello, register here!</h1>
 
                     <form onSubmit={handleSubmit(handleOnsubmit)}>
 
