@@ -9,20 +9,21 @@ import {useSelector} from 'react-redux';
 
 function App() {
   const user = useSelector(state => state.user)
+  let initial = false;
 
   useEffect(() => {
+    if (initial !== true ) {return }
     fetch('http://localhost:8000/users', {method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(
-      {
-        
+      {        
         "nickname": user.user.nickname,
         "email": user.user.email,
         "password": user.user.password,
         "createdAt": user.user.createdAt,
-        "id": user.user.id
-      
+        "id": user.user.id      
       }
     )});    
     console.log(JSON.stringify(user));
+    initial = true;
     // return () => {
     //   cleanup
     // }
