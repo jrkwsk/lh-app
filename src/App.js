@@ -42,14 +42,14 @@ function App() {
 
     // debugger
 
-    let query = `?email=${user.user.email}&password=${user.user.password}`
-    console.log(query)
-    fetch(`http://localhost:8000/users${query}`, {method: 'GET', headers: { 'Content-Type': 'application/json' }}) 
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+    // let query = `?email=${user.user.email}&password=${user.user.password}`
+    // console.log(query)
+    // fetch(`http://localhost:8000/users${query}`, {method: 'GET', headers: { 'Content-Type': 'application/json' }}) 
+    // .then(response => response.json())
+    // .then(data => console.log(data))
+    // .catch((error) => {
+    //   console.error('Error:', error);
+    // });
     // setInitial(true)
     // return () => {
     //   cleanup

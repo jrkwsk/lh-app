@@ -1,13 +1,17 @@
 import React, {useState} from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { logUser } from '../../store/userSlice'
+// import { logUser } from '../../store/userSlice'
+import { authReducer, fetchUser, logUser } from '../../store/authSlice'
+import { unwrapResult } from '@reduxjs/toolkit'
 
 
 export const LoginForm = () => {
-    const [success, setSuccess] = useState(false)
     const dispatch = useDispatch()
     // const user = useSelector(state => state.user)
+    const status = useSelector(state => state.status)
+    const auth = useSelector(state => state.auth)
+
 
 
     const {
@@ -18,24 +22,24 @@ export const LoginForm = () => {
         mode: 'onSubmit',
         reValidateMode: 'onChange',
         defaultValues: {email: undefined, password: undefined},
-        resolver: undefined,
-        context: undefined,
-        criteriaMode: "firstError",
-        shouldFocusError: true,
-        shouldUnregister: false,
-      })
 
+      })
    
     const handleOnsubmit = (data) => {
-        dispatch(logUser(data))
-        console.log("login data: ", data)
+        dispatch(fetchUser(data))
+
+        console.log("login data: ", data.email, data.password)
         // setSuccess(true)
     }
+
+    console.log("status: ", status)
+    console.log("auth: ", auth)
 
     return (
         <div className="container">
             <div className="row">
-{success === false 
+{auth.isAuthenticated === false
+
 ? 
                 <div className="col-8">
 
@@ -51,11 +55,10 @@ export const LoginForm = () => {
                                 <input
                                     type="text" className="form-control" id="" placeholder="Email"
                                     {...register("email", {
-                                        pattern: /\b[a-z0-9-_.]+@[a-z0-9-_.]+(\.[a-z0-9]+)+/i,
                                         required: true
                                     })}
                                 ></input>
-                                {errors.email && <p>Are you shure? It is not a valid email format</p>}
+                                {errors.email && <p>this is required</p>}
 
                             </div>
                         </div>
@@ -65,11 +68,10 @@ export const LoginForm = () => {
                             <div className="col-8">
                                 <input type="password" className="form-control" id="" placeholder="Password"
                                     {...register("password", {
-                                        // pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/i,
                                         required: true
                                     })}
                                 ></input>
-                                {errors.password && <p>Must contain minimum 7 characters, at least one letter and one number</p>}
+                                {errors.password && <p>this is required</p>}
 
                             </div>
                         </div>
@@ -84,6 +86,7 @@ export const LoginForm = () => {
                     </form>
                 </div>
                  : 
+
                  <div>
                  <div className="alert alert-success" role="alert">
     <strong>Well done!</strong> You successfully logged in!</div>    
