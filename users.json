@@ -76,6 +76,20 @@
       "password": "bbbbbbbbbbbbbbbbb7",
       "createdAt": 1622889990428,
       "id": 1622889990428
+    },
+    {
+      "nickname": "Kijowska",
+      "email": "ulajur@wp.pl",
+      "password": "zxcdsfaetrrew6t",
+      "createdAt": 1622891811367,
+      "id": 1622891811367
+    },
+    {
+      "nickname": "aaaaaaaaaaaaaa",
+      "email": "aaa@wp.pl",
+      "password": "aaaaaaaaa8a8a8a8a8a8",
+      "createdAt": 1622891844375,
+      "id": 1622891844375
     }
   ],
   "tasks": [

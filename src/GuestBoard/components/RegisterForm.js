@@ -1,11 +1,13 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { registerUser } from '../../store/newUserSlice'
 import { Link } from 'react-router-dom';
+import {useSelector} from 'react-redux';
 
 
 export const RegisterForm = () => {
+    const newUser = useSelector(state => state.newUser)
     const [success, setSuccess] = useState(false)
     const dispatch = useDispatch()
     // const user = useSelector(state => state.user)
@@ -32,6 +34,20 @@ export const RegisterForm = () => {
         console.log(data)
         setSuccess(true)
     }
+
+    useEffect(() => {
+        if (!newUser.newUser) { return }
+        fetch('http://localhost:8000/users', {method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(
+          {        
+            "nickname": newUser.newUser.nickname,
+            "email": newUser.newUser.email,
+            "password": newUser.newUser.password,
+            "createdAt": newUser.newUser.createdAt,
+            "id": newUser.newUser.id      
+          }
+        )});    
+    
+      }, [newUser]);
 
     return (
         <div className="container">

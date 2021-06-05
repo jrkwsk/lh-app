@@ -1,16 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { BrowserRouter as Router } from 'react-router-dom' 
-import { useDispatch, useSelector } from "react-redux";
-// import { viewMode } from '../../store/modeSlice'
-
 
 export const Navigation = () => {
-  // const mode = useSelector(state => state.mode)
-  // const dispatch = useDispatch()
   const mockmode = 'user-view'
-
-
 
 return (
   <Router>
