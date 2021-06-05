@@ -37,7 +37,12 @@ export const fetchUser = createAsyncThunk(
             console.log(payload)
             if (payload.length>0) {
                 state.isAuthenticated = true
-            }},
+            }
+          else {
+            state.status = "rejected"
+            
+          }
+          },
     }
 
     });
@@ -49,32 +54,3 @@ export const { logUser } = authSlice.actions;
 
 
 
-
-
-// export const login = (userData) => {  
-
-//         let query = `?email=${userData.email}&password=${userData.password}`
-//         console.log("query: ",query);
-        
-//         const sendRequest = async () => {        
-//         await fetch(`http://localhost:8000/users${query}`, {method: 'GET', headers: { 'Content-Type': 'application/json' }}) 
-//         .then(response => response.json())
-//         .then(data => console.log("data: ",data))
-//         .catch((error) => {
-//           console.error('Error:', error);
-//         });
-//         }
-//         try {
-//             sendRequest()
-//         } 
-//         catch (error) {
-//             console.log(error.message)
-//         }      
-
-        
-    
-// }
-
-// export const authReducer = authSlice.reducer;
-// // export action creators
-// export const { auth } = authSlice.actions;

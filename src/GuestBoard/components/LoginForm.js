@@ -1,18 +1,12 @@
 import React, {useState} from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-// import { logUser } from '../../store/userSlice'
-import { authReducer, fetchUser, logUser } from '../../store/authSlice'
-import { unwrapResult } from '@reduxjs/toolkit'
+import { fetchUser } from '../../store/authSlice'
 
 
 export const LoginForm = () => {
     const dispatch = useDispatch()
-    // const user = useSelector(state => state.user)
-    const status = useSelector(state => state.status)
     const auth = useSelector(state => state.auth)
-
-
 
     const {
         register,
@@ -27,20 +21,14 @@ export const LoginForm = () => {
    
     const handleOnsubmit = (data) => {
         dispatch(fetchUser(data))
-
-        console.log("login data: ", data.email, data.password)
-        // setSuccess(true)
     }
 
-    console.log("status: ", status)
-    console.log("auth: ", auth)
-
-    return (
+        return (
         <div className="container">
             <div className="row">
-{auth.isAuthenticated === false
+{auth.isAuthenticated === false &&
 
-? 
+
                 <div className="col-8">
 
                     <h1 className="display-3 m-5">Hello, login here!</h1>
@@ -85,14 +73,23 @@ export const LoginForm = () => {
 
                     </form>
                 </div>
-                 : 
+}
+{auth.isAuthenticated === true &&
 
                  <div>
                  <div className="alert alert-success" role="alert">
     <strong>Well done!</strong> You successfully logged in!</div>    
                     </div>
-
                 }
+
+{(auth.isAuthenticated === false && auth.status==="rejected") && 
+<div>
+                 <div className="alert alert-success" role="alert">
+    <strong>Oops!</strong> Try again!</div>    
+                    </div>
+                }
+
+
 
         </div>
         </div>

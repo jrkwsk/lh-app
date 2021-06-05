@@ -62,6 +62,20 @@
       "password": "444444444444rrrrrrrrr",
       "createdAt": 1622738535789,
       "id": 1622738535789
+    },
+    {
+      "nickname": "aaaaaaaaaa",
+      "email": "aaa@wp.pl",
+      "password": "aaaaaaaaaa8",
+      "createdAt": 1622889940653,
+      "id": 1622889940653
+    },
+    {
+      "nickname": "bbbbbbbbb",
+      "email": "bbb@wp.pl",
+      "password": "bbbbbbbbbbbbbbbbb7",
+      "createdAt": 1622889990428,
+      "id": 1622889990428
     }
   ],
   "tasks": [
