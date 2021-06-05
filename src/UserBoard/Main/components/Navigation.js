@@ -13,7 +13,7 @@ return (
   <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div className="navbar-nav">
       <li className="nav-item nav-link active">
-      <NavLink className="nav-link" to="/" activeClassName="nav-item-active">Home</NavLink>
+      <NavLink className="nav-link" to="/MainUserView" activeClassName="nav-item-active">Home</NavLink>
       </li>
       </div>     
 
