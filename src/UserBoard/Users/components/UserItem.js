@@ -6,7 +6,7 @@ export const UserItem = (user) => {
     const { push } = useHistory() 
 
     return (
-        <div className="card h-100" onClick={() => push('/user/' + user.user.id)}>
+        <div className="card h-100" onClick={() => push('/userdetails/' + user.user.id)}>
         <img src="http://simpleicon.com/wp-content/uploads/user1.svg" 
         className="card-img-top" alt={user.user.nickname} />
         <div className="card-body">
