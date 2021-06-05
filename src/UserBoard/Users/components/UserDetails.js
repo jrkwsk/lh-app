@@ -13,7 +13,7 @@ export const UserDetails = () => {
         <div>
             <Navigation />
             <div className="container">
-                <h2>The details of user: {params.id}</h2>
+                <h2>The details of user: {actualUser.nickname}</h2>
                 <div className="row">
                     <div className="col-3 card h-100">
                         <img src="http://simpleicon.com/wp-content/uploads/user1.svg"
@@ -24,8 +24,22 @@ export const UserDetails = () => {
                             <h5 className="card-title">{actualUser.id}</h5>
                         </div>
                     </div>
+                    <div className="col-3 card h-100">
+                        
+                            <h5 className="card-title">Users Tasks:</h5>
+                            <ul>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                            </ul>
+
+
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
+
+// fetch only one user from the database? 
