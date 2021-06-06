@@ -5,7 +5,6 @@ import { UsersList } from '../../Users/components/UsersList'
 export const UsersView = () => {
     return (
         <div> 
-            <Navigation />
             <div className="container">
                 <h2>Choose User to see details</h2>
                 <UsersList />

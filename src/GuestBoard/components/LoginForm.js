@@ -79,7 +79,7 @@ export const LoginForm = () => {
                 }
                 {auth.isAuthenticated === true &&
 
-<Redirect to="/MainUserView" />
+<Redirect to="/mainuserview" />
                 }
 
                 {(auth.isAuthenticated === false && auth.status === "rejected") &&

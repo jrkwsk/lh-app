@@ -1,25 +1,34 @@
 import React from 'react'
 import { Navigation } from '../components/Navigation'
-import { useSelector } from 'react-redux';
+import {UsersView} from '../../Users/containers/UsersView'
+import {TasksView} from '../../Tasks/containers/TasksView'
+import {SummaryView} from '../../Main/containers/SummaryView'
+import {KanbanView} from '../../Kanban/containers/KanbanView'
+import {SprintsView} from '../../Sprints/containers/SprintsView'
+
+import { Route, Switch } from 'react-router-dom'
 
 
 export const MainUserView = () => {
 
-    const loggedUser = useSelector(state => state.auth)
 
     return (
         <div>
             <Navigation />
-            <div className="container">
-                <div className="row">
-                    {loggedUser && <h2>Witaj {loggedUser.loggedUser[0].nickname}</h2>}
-                </div>
-                <div className="row">
-                   <div className="col-3">Your Tasks</div>
-                   <div className="col-3">New Tasks</div>
-                   <div className="col-3">Comments</div>
-                </div>
-            </div>
+
+            <Switch>
+<Route path="/mainuserview/users" component={UsersView} />
+<Route path="/mainuserview/tasks" component={TasksView}/>
+<Route path="/mainuserview/kanban" component={KanbanView}/>
+<Route path="/mainuserview/sprints" component={SprintsView}/>
+
+
+<Route exact path="/mainuserview" component={SummaryView}/>
+
+
+</Switch>
+
+            
         </div>
 
     )

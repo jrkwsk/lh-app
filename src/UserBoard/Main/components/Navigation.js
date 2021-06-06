@@ -19,18 +19,18 @@ return (
 
       <div className="navbar-nav">
       <li className="nav-item nav-link">
-      <NavLink className="nav-link" to="/users">Users</NavLink>
+      <NavLink className="nav-link" to="/mainuserview/users">Users</NavLink>
       </li>  
       
       <li className="nav-item nav-link">
-      <NavLink className="nav-link" to="/tasks">Tasks</NavLink>
+      <NavLink className="nav-link" to="/mainuserview/tasks">Tasks</NavLink>
       </li>
       
       <li className="nav-item nav-link">
-      <NavLink className="nav-link" to="/kanban">Kanban</NavLink>
+      <NavLink className="nav-link" to="/mainuserview/kanban">Kanban</NavLink>
       </li>
       <li className="nav-item nav-link">
-      <NavLink className="nav-link" to="/sprints">Sprints</NavLink></li>  
+      <NavLink className="nav-link" to="/mainuserview/sprints">Sprints</NavLink></li>  
       </div>    
     
   </div>

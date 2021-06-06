@@ -2,12 +2,12 @@ import { createSlice } from '@reduxjs/toolkit'
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 
-export const fetchUsers = createAsyncThunk(
-    "all-users/fetch", 
+export const fetchTasks = createAsyncThunk(
+    "all-tasks/fetch", 
     async () => {
       // Fetch the backend endpoint:
       const response = await fetch(
-        `http://localhost:8000/users`
+        `http://localhost:8000/tasks`
       );  
       // Get the JSON from the response:
       const resData = await response.json();       
@@ -16,22 +16,20 @@ export const fetchUsers = createAsyncThunk(
     }
 )
 
-  const usersSlice = createSlice({
-    name: "all-users-data",
-    initialState: {users:[]},
-    // reducers: {
-    //     logUser: (state, action) => {state.isAuthenticated = true}
-    // },
+  const tasksSlice = createSlice({
+    name: "all-tasks-data",
+    initialState: {tasks:[]},
+
     extraReducers:{
-        [fetchUsers.fulfilled]: (state, { meta, payload }) => {
-          state.users = payload
+        [fetchTasks.fulfilled]: (state, { meta, payload }) => {
+          state.tasks = payload
           }
           },
     }
   )
    
 
-export const usersReducer = usersSlice.reducer;
+export const tasksReducer = tasksSlice.reducer;
 
 //api call aut of this file
 
