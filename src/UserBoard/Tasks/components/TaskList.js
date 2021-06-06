@@ -7,8 +7,9 @@ export const TaskList = () => {
     const dispatch = useDispatch();
     const {tasks} = useSelector(state => state.tasks);
 
+    //empty string as no query passed 
     useEffect(() => {
-        dispatch(fetchTasks())        
+        dispatch(fetchTasks(""))        
     }, [dispatch])
 
     return (
@@ -20,6 +21,7 @@ export const TaskList = () => {
                         <th>Task title</th>
                         <th>Status</th>
                         <th>Sprint</th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>

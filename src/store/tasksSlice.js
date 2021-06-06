@@ -4,10 +4,10 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchTasks = createAsyncThunk(
     "all-tasks/fetch", 
-    async () => {
+    async (query) => {
       // Fetch the backend endpoint:
       const response = await fetch(
-        `http://localhost:8000/tasks`
+        `http://localhost:8000/tasks?${query}`
       );  
       // Get the JSON from the response:
       const resData = await response.json();       
