@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const newUserSlice = createSlice({
-    name: "new-user-data",
+    name: "logged-user-data",
     initialState: {},
     reducers: {
         registerUser: (state, action) => {state.newUser = {...action.payload, createdAt: Date.now(), id: Date.now()}},
