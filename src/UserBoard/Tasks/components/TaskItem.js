@@ -9,9 +9,9 @@ export const TaskItem = (task,index) => {
             <th>{task.task.title}</th>
 
             {task.task.status==="done" && <th><span class="badge badge-success">Done</span></th>} 
-            {task.task.status==="inprogres" && <th><span class="badge badge-light">In progress</span></th>} 
-            {task.task.status==="canceled" && <th><span class="badge badge-danger">Canceled</span></th>} 
-            {task.task.status==="tests" && <th><span class="badge badge-warning">Tests</span></th>} 
+            {task.task.status==="inprogres" && <th><span class="badge badge-dark">in progress</span></th>} 
+            {task.task.status==="new" && <th><span class="badge badge-danger">new</span></th>} 
+            {task.task.status==="review" && <th><span class="badge badge-warning">review</span></th>} 
 
 
 

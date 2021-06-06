@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import { TaskItem } from './TaskItem'
 import { useDispatch, useSelector } from "react-redux"
 import {fetchTasks} from '../../../store/tasksSlice' 
+import { TaskSorter } from './TaskSorter'
 
 export const TaskList = () => {
     const dispatch = useDispatch();
@@ -14,6 +15,7 @@ export const TaskList = () => {
 
     return (
         <div>
+            <TaskSorter />
             <table className="table">
                 <thead className="thead-dark">
                     <tr>
