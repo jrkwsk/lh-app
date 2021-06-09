@@ -4,7 +4,8 @@ import {newUserReducer} from './newUserSlice'
 import {usersReducer} from './usersSlice'
 import {tasksReducer} from './tasksSlice'
 import {commentsReducer} from './commentsSlice'
-import {filterReducer} from './filterSlice'
+import { filterReducer } from './filterSlice'
+
 
 
 

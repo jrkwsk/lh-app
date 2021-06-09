@@ -24,7 +24,7 @@ export const fetchUser = createAsyncThunk(
     // },
     extraReducers:{
         [fetchUser.fulfilled]: (state, { meta, payload }) => {
-            console.log(payload)
+            console.log("payload:", payload)
             if (payload.length>0) {
                 state.isAuthenticated = true;
                 state.loggedUser = payload;
@@ -39,8 +39,7 @@ export const fetchUser = createAsyncThunk(
 
 
 export const authReducer = authSlice.reducer;
-export const { logUser } = authSlice.actions;
 
 
-//api call aut of this file
+//api call aut of this file!!!
 

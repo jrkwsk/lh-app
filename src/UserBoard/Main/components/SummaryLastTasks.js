@@ -13,7 +13,7 @@ export const SummaryLastTasks = ({tasks}) => {
 
             <h3>Your last 3 tasks</h3>
             <ul className="list-group" onClick={() => push('/mainuserview/tasks')}>
-                {sortedTasks.slice(0, 3).map(task => <li className="list-group-item" key={task.id}>{task.title} <span class="badge badge-dark">{new Date(task.createdAt).toLocaleDateString()}</span></li>)}
+                {sortedTasks.slice(0, 3).map(task => <li className="list-group-item" key={task.id}>{task.title} <span className="badge badge-dark">{new Date(task.createdAt).toLocaleDateString()}</span></li>)}
             </ul>
         </div>
     )

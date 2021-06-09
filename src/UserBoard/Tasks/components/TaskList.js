@@ -3,7 +3,7 @@ import { TaskItem } from './TaskItem'
 import { useDispatch, useSelector } from "react-redux"
 import {fetchTasks} from '../../../store/tasksSlice' 
 // import { TaskSorter } from './TaskSorter'
-import { filterReducer } from '../../../store/filterSlice'
+import { filterTasks } from '../../../store/filterSlice'
 
 
 export const TaskList = () => {
@@ -16,8 +16,8 @@ export const TaskList = () => {
     }, [])
 
     const filterByDone = () => {
-        dispatch(filterReducer())
-            console.log(tasks)       
+        dispatch(filterTasks({tasks}))
+        console.log(tasks)       
     }            
         
     return (
