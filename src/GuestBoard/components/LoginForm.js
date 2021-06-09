@@ -69,11 +69,14 @@ export const LoginForm = () => {
 
                             <div className="form-group row">
                                 <div className="col-8">
-                                    <button type="submit" className="btn btn-primary">Sign up</button>
+                                    <button type="submit" className="btn btn-primary">Login</button>
                                 </div>
                             </div>
-
-
+                            <div className="form-group row">
+                                <div className="col-8">
+                                    <p>test user: aaa@wp.pl, aaa</p>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 }

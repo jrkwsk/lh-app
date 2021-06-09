@@ -19,15 +19,19 @@ export const fetchTasks = createAsyncThunk(
   const tasksSlice = createSlice({
     name: "all-tasks-data",
     initialState: {tasks:[]},
-
+    // reducers: {
+    //   filterTasks: (state, action) => {
+    //     state.tasks = state.tasks.filter(task => task.status==="done" )
+    //   }
+    // },
     extraReducers:{
         [fetchTasks.fulfilled]: (state, { meta, payload }) => {
           state.tasks = payload
           }
           },
-    }
-  )
-   
+        }
+  )  
+
 
 export const tasksReducer = tasksSlice.reducer;
 

@@ -12,7 +12,7 @@ export const SummaryComments = ({comments}) => {
             <h3>Newest comments</h3>
             <ul className="list-group" onClick={() => push('/mainuserview/comments')}>
 
-                {sortedComments.map(comment => <li className="list-group-item" key={comment.id}>{comment.content} <span class="badge badge-dark">{new Date(comment.createdAt).toLocaleDateString()}
+                {sortedComments.map(comment => <li className="list-group-item" key={comment.id}>{comment.content} <span className="badge badge-dark">{new Date(comment.createdAt).toLocaleDateString()}
                 </span></li>)}
             </ul>
 

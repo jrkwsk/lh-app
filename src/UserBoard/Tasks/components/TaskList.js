@@ -2,7 +2,9 @@ import React, {useEffect} from 'react'
 import { TaskItem } from './TaskItem'
 import { useDispatch, useSelector } from "react-redux"
 import {fetchTasks} from '../../../store/tasksSlice' 
-import { TaskSorter } from './TaskSorter'
+// import { TaskSorter } from './TaskSorter'
+import { filterReducer } from '../../../store/filterSlice'
+
 
 export const TaskList = () => {
     const dispatch = useDispatch();
@@ -11,11 +13,28 @@ export const TaskList = () => {
     //empty string as no query passed 
     useEffect(() => {
         dispatch(fetchTasks(""))        
-    }, [dispatch])
+    }, [])
 
+    const filterByDone = () => {
+        dispatch(filterReducer())
+            console.log(tasks)       
+    }            
+        
     return (
         <div>
-            <TaskSorter />
+            <div>
+            <div className="container">
+                <div className="row">
+                    <span className="m-1">Sort by:</span>
+                </div>
+                <div className="row mb-1">
+                    <span className="badge badge-success m-1" onClick={filterByDone}>done</span>
+                    <span className="badge badge-dark m-1" onClick={()=>{}}>in progress</span>
+                    <span className="badge badge-danger m-1" onClick={()=>{}}>new</span>
+                    <span className="badge badge-warning m-1" onClick={()=>{}}>review</span>
+                </div>
+            </div>
+        </div>
             <table className="table">
                 <thead className="thead-dark">
                     <tr>

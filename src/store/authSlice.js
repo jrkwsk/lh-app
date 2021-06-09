@@ -30,8 +30,7 @@ export const fetchUser = createAsyncThunk(
                 state.loggedUser = payload;
             }
           else {
-            state.status = "rejected"
-            
+            state.status = "rejected"            
           }
           },
     }

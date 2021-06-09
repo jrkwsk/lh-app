@@ -8,5 +8,7 @@ const newUserSlice = createSlice({
     }
 })
 
+
+
 export const newUserReducer = newUserSlice.reducer;
 export const { registerUser } = newUserSlice.actions;

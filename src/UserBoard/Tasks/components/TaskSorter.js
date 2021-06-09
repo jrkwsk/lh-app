@@ -1,6 +1,10 @@
 import React from 'react'
 
-export const TaskSorter = () => {
+
+export const TaskSorter = (filterByDone) => {
+
+
+
     return (
         <div>
             <div className="container">
@@ -8,7 +12,7 @@ export const TaskSorter = () => {
                     <span className="m-1">Sort by:</span>
                 </div>
                 <div className="row mb-1">
-                    <span className="badge badge-success m-1" onClick={()=>{}}>done</span>
+                    <span className="badge badge-success m-1" onClick={()=>filterByDone}>done</span>
                     <span className="badge badge-dark m-1" onClick={()=>{}}>in progress</span>
                     <span className="badge badge-danger m-1" onClick={()=>{}}>new</span>
                     <span className="badge badge-warning m-1" onClick={()=>{}}>review</span>
