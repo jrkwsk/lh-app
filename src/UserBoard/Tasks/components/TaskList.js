@@ -1,14 +1,15 @@
 import React, {useEffect} from 'react'
 import { TaskItem } from './TaskItem'
 import { useDispatch, useSelector } from "react-redux"
-import {fetchTasks} from '../../../store/tasksSlice' 
-// import { TaskSorter } from './TaskSorter'
-import { filterTasks } from '../../../store/filterSlice'
+import {fetchTasks, filterTasks} from '../../../store/tasksSlice' 
+// import { filterTasks } from '../../../store/filterSlice'
+
 
 
 export const TaskList = () => {
     const dispatch = useDispatch();
     const {tasks} = useSelector(state => state.tasks);
+
 
     //empty string as no query passed 
     useEffect(() => {
@@ -48,6 +49,7 @@ export const TaskList = () => {
                 </thead>
                 
                 <tbody>
+                    {tasks.map(task=> <TaskItem key={task.id} task={task} />)}
                     {tasks.map(task=> <TaskItem key={task.id} task={task} />)}
                 
                     

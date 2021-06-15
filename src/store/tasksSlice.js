@@ -19,7 +19,12 @@ export const fetchTasks = createAsyncThunk(
   const tasksSlice = createSlice({
     name: "all-tasks-data",
     initialState: {tasks:[]},
-
+    reducers: {
+      filterTasks: (state, action) => {        
+        state.tasks = action.payload.tasks.filter(p => p.status ==="done")
+        //move to tasks slice and try to display it  
+      }
+    },
     extraReducers:{
         [fetchTasks.fulfilled]: (state, { meta, payload }) => {
           state.tasks = payload
@@ -29,6 +34,8 @@ export const fetchTasks = createAsyncThunk(
 
 
 export const tasksReducer = tasksSlice.reducer;
+export const {filterTasks} = tasksSlice.actions;
+
 
 //api call aut of this file
 
