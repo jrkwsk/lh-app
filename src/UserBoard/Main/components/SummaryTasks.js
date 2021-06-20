@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 export const SummaryTasks = ({tasks}) => {
 
     const { push } = useHistory() 
+    console.log("SummaryTasks")
 
     return (
         <div>

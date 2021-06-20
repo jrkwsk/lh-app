@@ -5,6 +5,8 @@ export const SummaryLastTasks = ({tasks}) => {
 
 
     const sortedTasks = tasks.slice().sort((a, b) => b.createdAt - a.createdAt)
+    console.log("SummaryLastTasks")
+
 
   
 

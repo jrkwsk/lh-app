@@ -6,6 +6,8 @@ export const SummaryComments = ({comments}) => {
     const { push } = useHistory() 
 
     const sortedComments = comments.slice().sort((a, b) => b.createdAt - a.createdAt)
+    console.log("SummaryComments")
+
 
     return (
         <div>

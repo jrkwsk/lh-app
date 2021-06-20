@@ -14,13 +14,15 @@ export const TaskList = () => {
     //empty string as no query passed 
     useEffect(() => {
         dispatch(fetchTasks(""))        
+        console.log("tasks fetched")       
+
     }, [])
 
     const filterByDone = () => {
         dispatch(filterTasks({tasks}))
         console.log(tasks)       
     }            
-        
+    console.log("tasklist")
     return (
         <div>
             <div>
@@ -49,9 +51,7 @@ export const TaskList = () => {
                 </thead>
                 
                 <tbody>
-                    {tasks.map(task=> <TaskItem key={task.id} task={task} />)}
-                    {tasks.map(task=> <TaskItem key={task.id} task={task} />)}
-                
+                    {tasks.map(task=> <TaskItem key={task.id} task={task} />)}               
                     
                 </tbody>
             </table>

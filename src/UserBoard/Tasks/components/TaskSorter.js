@@ -22,4 +22,3 @@ export const TaskSorter = (filterByDone) => {
     )
 }
 
-//reducers used here differently to practice dispatching actions
