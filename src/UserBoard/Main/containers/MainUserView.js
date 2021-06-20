@@ -16,17 +16,13 @@ export const MainUserView = () => {
         <div>
             <Navigation />
 
-            <Switch>
-<Route path="/mainuserview/users" component={UsersView} />
-<Route path="/mainuserview/tasks" component={TasksView}/>
-<Route path="/mainuserview/kanban" component={KanbanView}/>
-<Route path="/mainuserview/sprints" component={SprintsView}/>
-
-
-<Route exact path="/mainuserview" component={SummaryView}/>
-
-
-</Switch>
+                <Switch>
+                    <Route path="/mainuserview/users" component={UsersView} />
+                    <Route path="/mainuserview/tasks" component={TasksView}/>
+                    <Route path="/mainuserview/kanban" component={KanbanView}/>
+                    <Route path="/mainuserview/sprints" component={SprintsView}/>
+                    <Route exact path="/mainuserview" component={SummaryView}/>
+                </Switch>
 
             
         </div>
